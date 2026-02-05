@@ -15,13 +15,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Sarah Mitchell | Luxury Real Estate Agent | Your Trusted Partner in Home Buying & Selling",
-  description: "Sarah Mitchell is a top-rated luxury real estate agent with 15+ years of experience. Specializing in residential properties, first-time buyers, and investment properties. Contact today for a free consultation.",
+  title: "Sarah Mitchell | Luxury Real Estate Agent",
+  description: "Beverly Hills luxury real estate agent with 15+ years of experience. Specializing in residential properties, first-time buyers, and investment consulting.",
   keywords: "real estate agent, luxury homes, property sales, home buying, real estate services, residential real estate",
   authors: [{ name: "Sarah Mitchell" }],
   openGraph: {
     title: "Sarah Mitchell | Luxury Real Estate Agent",
-    description: "Your trusted partner in finding the perfect home. 15+ years of experience in luxury real estate.",
+    description: "Beverly Hills luxury real estate agent with 15+ years of experience. Specializing in residential properties, first-time buyers, and investment consulting.",
+    images: ["/og-image.png"],
+    url: "https://realtor-landing-six.vercel.app",
     type: "website",
     locale: "en_US",
     siteName: "Sarah Mitchell Real Estate",
@@ -29,7 +31,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Sarah Mitchell | Luxury Real Estate Agent",
-    description: "Your trusted partner in finding the perfect home. 15+ years of experience in luxury real estate.",
+    description: "Beverly Hills luxury real estate agent with 15+ years of experience. Specializing in residential properties, first-time buyers, and investment consulting.",
+  },
+  alternates: {
+    canonical: "https://realtor-landing-six.vercel.app",
   },
   robots: {
     index: true,
@@ -47,7 +52,7 @@ export default function RootLayout({
     "@type": "RealEstateAgent",
     name: "Sarah Mitchell",
     description: "Luxury real estate agent specializing in residential properties, first-time buyers, and investment properties.",
-    url: "https://www.sarahmitchellrealty.com",
+    url: "https://realtor-landing-six.vercel.app",
     telephone: "+1-555-123-4567",
     email: "sarah@sarahmitchellrealty.com",
     address: {
@@ -97,13 +102,11 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-      <head>
+      <body className="font-sans antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      </head>
-      <body className="font-sans antialiased">
         {children}
       </body>
     </html>
