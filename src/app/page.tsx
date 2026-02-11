@@ -1,7 +1,33 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import {
+  Star,
+  ArrowRight,
+  Home as HomeIcon,
+  DollarSign,
+  BarChart3,
+  TrendingUp,
+  MapPin,
+  Sparkles,
+  CheckCircle,
+  Phone,
+  Mail,
+  User,
+  Users,
+  BadgeCheck,
+  Quote,
+  BedDouble,
+  Bath,
+  Maximize,
+  Menu,
+  X,
+  Loader2,
+  Check,
+  Facebook,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
 
 const listings = [
   {
@@ -76,57 +102,32 @@ const services = [
   {
     title: "Buyer Representation",
     description: "Expert guidance through every step of your home buying journey, from property search to closing.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-      </svg>
-    ),
+    icon: <HomeIcon className="w-8 h-8" />,
   },
   {
     title: "Seller Representation",
     description: "Strategic marketing and negotiation to maximize your property's value and minimize time on market.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
+    icon: <DollarSign className="w-8 h-8" />,
   },
   {
     title: "Market Analysis",
     description: "Comprehensive market reports and property valuations to help you make informed decisions.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-      </svg>
-    ),
+    icon: <BarChart3 className="w-8 h-8" />,
   },
   {
     title: "Investment Consulting",
     description: "Strategic advice for real estate investors looking to build and diversify their property portfolio.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-      </svg>
-    ),
+    icon: <TrendingUp className="w-8 h-8" />,
   },
   {
     title: "Relocation Services",
     description: "Seamless relocation assistance including area tours, school information, and community insights.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-    ),
+    icon: <MapPin className="w-8 h-8" />,
   },
   {
     title: "Luxury Properties",
     description: "Exclusive access to off-market luxury properties and high-end real estate opportunities.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-      </svg>
-    ),
+    icon: <Sparkles className="w-8 h-8" />,
   },
 ];
 
@@ -183,7 +184,6 @@ export default function Home() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1000));
     setIsSubmitting(false);
     setSubmitSuccess(true);
@@ -206,7 +206,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fafafa]">
+    <div className="min-h-screen bg-[#fafafa] overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#e2e8f0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -240,13 +240,11 @@ export default function Home() {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
             >
-              <svg className="w-6 h-6 text-[#1a1a2e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
+              {mobileMenuOpen ? (
+                <X className="w-6 h-6 text-[#1a1a2e]" />
+              ) : (
+                <Menu className="w-6 h-6 text-[#1a1a2e]" />
+              )}
             </button>
           </div>
 
@@ -274,17 +272,15 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-20 bg-gradient-to-br from-[#f8fafc] via-white to-[#f1f5f9]">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 right-0 w-[600px] h-[600px] bg-[#1e40af]/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#d4a853]/10 rounded-full blur-3xl" />
+          <div className="absolute top-20 right-0 w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-[#1e40af]/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-[200px] h-[200px] sm:w-[400px] sm:h-[400px] bg-[#d4a853]/10 rounded-full blur-3xl" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 bg-[#d4a853]/10 text-[#b8942e] px-4 py-2 rounded-full text-sm font-medium mb-6">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
+              <div className="inline-flex items-center gap-2 bg-[#1e40af]/10 text-[#1e3a8a] px-4 py-2 rounded-full text-sm font-medium mb-6">
+                <Star className="w-4 h-4" />
                 Top-Rated Luxury Real Estate Agent
               </div>
 
@@ -292,7 +288,7 @@ export default function Home() {
                 Find Your <span className="text-[#1e40af]">Dream Home</span> With Expert Guidance
               </h1>
 
-              <p className="text-lg text-[#64748b] mb-8 max-w-xl mx-auto lg:mx-0">
+              <p className="text-lg text-[#475569] mb-8 max-w-xl mx-auto lg:mx-0">
                 With over 15 years of experience in luxury real estate, I help clients navigate the market with confidence and find properties that perfectly match their lifestyle.
               </p>
 
@@ -302,9 +298,7 @@ export default function Home() {
                   className="bg-[#1e40af] text-white px-8 py-4 rounded-full hover:bg-[#1e3a8a] transition-colors font-medium text-lg inline-flex items-center justify-center gap-2"
                 >
                   Schedule Consultation
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
+                  <ArrowRight className="w-5 h-5" />
                 </a>
                 <a
                   href="#listings"
@@ -320,9 +314,7 @@ export default function Home() {
                   <div className="flex -space-x-2">
                     {[1, 2, 3, 4].map((i) => (
                       <div key={i} className="w-10 h-10 rounded-full bg-[#e2e8f0] border-2 border-white flex items-center justify-center">
-                        <svg className="w-5 h-5 text-[#64748b]" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                        </svg>
+                        <User className="w-5 h-5 text-[#64748b]" />
                       </div>
                     ))}
                   </div>
@@ -330,11 +322,9 @@ export default function Home() {
                     <p className="font-semibold text-[#1a1a2e]">500+ Happy Clients</p>
                     <div className="flex items-center gap-1">
                       {[1, 2, 3, 4, 5].map((i) => (
-                        <svg key={i} className="w-4 h-4 text-[#d4a853]" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
+                        <Star key={i} className="w-4 h-4 text-[#d4a853] fill-[#d4a853]" />
                       ))}
-                      <span className="text-[#64748b] ml-1">4.9/5</span>
+                      <span className="text-[#475569] ml-1">4.9/5</span>
                     </div>
                   </div>
                 </div>
@@ -346,56 +336,52 @@ export default function Home() {
               <div className="relative z-10">
                 <div className="aspect-[4/5] max-w-md mx-auto bg-gradient-to-br from-[#e2e8f0] to-[#cbd5e1] rounded-2xl overflow-hidden shadow-2xl">
                   <div className="absolute inset-0 flex flex-col items-center justify-center text-[#64748b]">
-                    <svg className="w-24 h-24 mb-4" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                    </svg>
+                    <User className="w-24 h-24 mb-4" />
                     <p className="text-sm font-medium">Agent Photo</p>
                     <p className="text-xs mt-1">Replace with your image</p>
                   </div>
                 </div>
 
                 {/* Floating Card */}
-                <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-4 border border-[#e2e8f0]">
+                <div className="absolute -bottom-6 left-0 sm:-left-6 bg-white rounded-xl shadow-xl p-4 border border-[#e2e8f0]">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 bg-[#d4a853]/10 rounded-full flex items-center justify-center">
-                      <svg className="w-6 h-6 text-[#d4a853]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
+                      <CheckCircle className="w-6 h-6 text-[#d4a853]" />
                     </div>
                     <div>
                       <p className="font-semibold text-[#1a1a2e]">Licensed Agent</p>
-                      <p className="text-sm text-[#64748b]">CA DRE #01234567</p>
+                      <p className="text-sm text-[#475569]">CA DRE #01234567</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Another Floating Card */}
-                <div className="absolute -top-4 -right-4 bg-white rounded-xl shadow-xl p-4 border border-[#e2e8f0]">
+                <div className="absolute -top-4 right-0 sm:-right-4 bg-white rounded-xl shadow-xl p-4 border border-[#e2e8f0]">
                   <div className="text-center">
                     <p className="text-2xl font-bold text-[#1e40af]">$250M+</p>
-                    <p className="text-sm text-[#64748b]">Sales Volume</p>
+                    <p className="text-sm text-[#475569]">Sales Volume</p>
                   </div>
                 </div>
               </div>
 
-              {/* Background Decorations */}
-              <div className="absolute top-10 right-10 w-72 h-72 bg-[#1e40af]/10 rounded-full blur-2xl -z-10" />
-              <div className="absolute bottom-10 left-10 w-48 h-48 bg-[#d4a853]/20 rounded-full blur-2xl -z-10" />
+              {/* Background Decorations - hidden on small mobile */}
+              <div className="hidden sm:block absolute top-10 right-10 w-72 h-72 bg-[#1e40af]/10 rounded-full blur-2xl -z-10" />
+              <div className="hidden sm:block absolute bottom-10 left-10 w-48 h-48 bg-[#d4a853]/20 rounded-full blur-2xl -z-10" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Market Stats */}
-      <section className="py-16 bg-[#1e40af]">
+      <section className="py-12 sm:py-16 bg-[#1e40af]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-white mb-2" style={{ fontFamily: "var(--font-playfair)" }}>
+                <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2" style={{ fontFamily: "var(--font-playfair)" }}>
                   {stat.value}
                 </p>
-                <p className="text-[#93c5fd] text-sm md:text-base">{stat.label}</p>
+                <p className="text-[#dbeafe] text-xs sm:text-sm md:text-base">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -403,25 +389,23 @@ export default function Home() {
       </section>
 
       {/* Featured Listings */}
-      <section id="listings" className="py-20 bg-[#f1f5f9]">
+      <section id="listings" className="py-16 sm:py-20 bg-[#f1f5f9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a2e] mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
               Featured Listings
             </h2>
-            <p className="text-[#64748b] max-w-2xl mx-auto">
+            <p className="text-[#475569] max-w-2xl mx-auto">
               Discover exceptional properties handpicked for their unique charm, prime locations, and outstanding value.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {listings.map((listing) => (
               <article key={listing.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
                 <div className="relative aspect-[4/3] bg-[#e2e8f0]">
                   <div className="absolute inset-0 flex items-center justify-center text-[#64748b]">
-                    <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                    </svg>
+                    <HomeIcon className="w-16 h-16" strokeWidth={1} />
                   </div>
                   <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-sm font-medium ${
                     listing.status === "For Sale"
@@ -433,35 +417,26 @@ export default function Home() {
                     {listing.status}
                   </div>
                 </div>
-                <div className="p-6">
-                  <p className="text-2xl font-bold text-[#1e40af] mb-2">{listing.price}</p>
-                  <h3 className="text-xl font-semibold text-[#1a1a2e] mb-2 group-hover:text-[#1e40af] transition-colors">
+                <div className="p-5 sm:p-6">
+                  <p className="text-xl sm:text-2xl font-bold text-[#1e40af] mb-2">{listing.price}</p>
+                  <h3 className="text-lg sm:text-xl font-semibold text-[#1a1a2e] mb-2 group-hover:text-[#1e40af] transition-colors">
                     {listing.title}
                   </h3>
-                  <p className="text-[#64748b] text-sm mb-4 flex items-center gap-1">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    {listing.address}
+                  <p className="text-[#475569] text-sm mb-4 flex items-center gap-1">
+                    <MapPin className="w-4 h-4 shrink-0" />
+                    <span className="truncate">{listing.address}</span>
                   </p>
-                  <div className="flex items-center gap-4 text-sm text-[#64748b] pt-4 border-t border-[#e2e8f0]">
+                  <div className="flex items-center gap-3 sm:gap-4 text-sm text-[#475569] pt-4 border-t border-[#e2e8f0]">
                     <span className="flex items-center gap-1">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                      </svg>
+                      <BedDouble className="w-4 h-4 shrink-0" />
                       {listing.beds} Beds
                     </span>
                     <span className="flex items-center gap-1">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
-                      </svg>
+                      <Bath className="w-4 h-4 shrink-0" />
                       {listing.baths} Baths
                     </span>
                     <span className="flex items-center gap-1">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-                      </svg>
+                      <Maximize className="w-4 h-4 shrink-0" />
                       {listing.sqft} Sq Ft
                     </span>
                   </div>
@@ -476,37 +451,35 @@ export default function Home() {
               className="inline-flex items-center gap-2 bg-[#1e40af] text-white px-8 py-4 rounded-full hover:bg-[#1e3a8a] transition-colors font-medium"
             >
               View All Properties
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              <ArrowRight className="w-5 h-5" />
             </a>
           </div>
         </div>
       </section>
 
       {/* Services */}
-      <section id="services" className="py-20 bg-white">
+      <section id="services" className="py-16 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a2e] mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
               Services I Offer
             </h2>
-            <p className="text-[#64748b] max-w-2xl mx-auto">
+            <p className="text-[#475569] max-w-2xl mx-auto">
               Comprehensive real estate services tailored to meet your unique needs and exceed your expectations.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="p-8 rounded-2xl border border-[#e2e8f0] hover:border-[#1e40af] hover:shadow-lg transition-all group"
+                className="p-6 sm:p-8 rounded-2xl border border-[#e2e8f0] hover:border-[#1e40af] hover:shadow-lg transition-all group"
               >
                 <div className="w-14 h-14 bg-[#1e40af]/10 rounded-xl flex items-center justify-center text-[#1e40af] mb-6 group-hover:bg-[#1e40af] group-hover:text-white transition-colors">
                   {service.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-[#1a1a2e] mb-3">{service.title}</h3>
-                <p className="text-[#64748b]">{service.description}</p>
+                <p className="text-[#475569]">{service.description}</p>
               </div>
             ))}
           </div>
@@ -514,20 +487,18 @@ export default function Home() {
       </section>
 
       {/* About */}
-      <section id="about" className="py-20 bg-[#f1f5f9]">
+      <section id="about" className="py-16 sm:py-20 bg-[#f1f5f9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <div className="aspect-square max-w-lg mx-auto bg-gradient-to-br from-[#e2e8f0] to-[#cbd5e1] rounded-2xl overflow-hidden shadow-xl">
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-[#64748b]">
-                  <svg className="w-20 h-20 mb-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                  </svg>
+                  <User className="w-20 h-20 mb-4" />
                   <p className="text-sm font-medium">About Photo</p>
                 </div>
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-[#d4a853] rounded-2xl p-6 text-white shadow-xl">
-                <p className="text-4xl font-bold" style={{ fontFamily: "var(--font-playfair)" }}>15+</p>
+              <div className="absolute -bottom-4 right-2 sm:-bottom-6 sm:-right-6 bg-[#d4a853] rounded-2xl p-4 sm:p-6 text-white shadow-xl">
+                <p className="text-3xl sm:text-4xl font-bold" style={{ fontFamily: "var(--font-playfair)" }}>15+</p>
                 <p className="text-sm">Years of Excellence</p>
               </div>
             </div>
@@ -536,33 +507,27 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a2e] mb-6" style={{ fontFamily: "var(--font-playfair)" }}>
                 About Sarah Mitchell
               </h2>
-              <p className="text-[#64748b] mb-6">
+              <p className="text-[#475569] mb-6">
                 With over 15 years of experience in luxury real estate, I&apos;ve helped hundreds of families find their perfect homes in the most prestigious neighborhoods of Southern California.
               </p>
-              <p className="text-[#64748b] mb-6">
+              <p className="text-[#475569] mb-6">
                 My approach combines deep market knowledge with a genuine passion for matching people with properties that enhance their lives. I believe that buying or selling a home should be an exciting journey, not a stressful one.
               </p>
-              <p className="text-[#64748b] mb-8">
+              <p className="text-[#475569] mb-8">
                 As a Beverly Hills resident myself, I offer insider knowledge of the community, schools, and lifestyle that you won&apos;t find in any listing. My commitment to excellence has earned me recognition as a top producer and trusted advisor in the industry.
               </p>
 
-              <div className="flex flex-wrap gap-4">
-                <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
-                  <svg className="w-5 h-5 text-[#d4a853]" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
+              <div className="flex flex-wrap gap-3 sm:gap-4">
+                <div className="flex items-center gap-2 bg-white px-3 sm:px-4 py-2 rounded-full shadow-sm">
+                  <Star className="w-5 h-5 text-[#d4a853] fill-[#d4a853] shrink-0" />
                   <span className="text-sm font-medium text-[#1a1a2e]">Top Producer Award</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
-                  <svg className="w-5 h-5 text-[#1e40af]" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
+                <div className="flex items-center gap-2 bg-white px-3 sm:px-4 py-2 rounded-full shadow-sm">
+                  <BadgeCheck className="w-5 h-5 text-[#1e40af] shrink-0" />
                   <span className="text-sm font-medium text-[#1a1a2e]">Licensed Since 2009</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
-                  <svg className="w-5 h-5 text-[#d4a853]" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
-                  </svg>
+                <div className="flex items-center gap-2 bg-white px-3 sm:px-4 py-2 rounded-full shadow-sm">
+                  <Users className="w-5 h-5 text-[#d4a853] shrink-0" />
                   <span className="text-sm font-medium text-[#1a1a2e]">500+ Clients Served</span>
                 </div>
               </div>
@@ -572,50 +537,44 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="py-20 bg-white">
+      <section id="testimonials" className="py-16 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a2e] mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
               What My Clients Say
             </h2>
-            <p className="text-[#64748b] max-w-2xl mx-auto">
+            <p className="text-[#475569] max-w-2xl mx-auto">
               Real stories from real clients who found their dream homes with my guidance.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-[#f8fafc] rounded-2xl p-8 relative"
+                className="bg-[#f8fafc] rounded-2xl p-6 sm:p-8 relative"
               >
                 <div className="absolute -top-4 left-8">
                   <div className="w-8 h-8 bg-[#d4a853] rounded-full flex items-center justify-center">
-                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                    </svg>
+                    <Quote className="w-4 h-4 text-white" />
                   </div>
                 </div>
 
                 <div className="flex gap-1 mb-4 mt-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-[#d4a853]" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
+                    <Star key={i} className="w-5 h-5 text-[#d4a853] fill-[#d4a853]" />
                   ))}
                 </div>
 
-                <p className="text-[#64748b] mb-6 italic">&ldquo;{testimonial.text}&rdquo;</p>
+                <p className="text-[#475569] mb-6 italic">&ldquo;{testimonial.text}&rdquo;</p>
 
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-[#e2e8f0] rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6 text-[#64748b]" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                    </svg>
+                    <User className="w-6 h-6 text-[#64748b]" />
                   </div>
                   <div>
                     <p className="font-semibold text-[#1a1a2e]">{testimonial.name}</p>
-                    <p className="text-sm text-[#64748b]">{testimonial.location}</p>
+                    <p className="text-sm text-[#475569]">{testimonial.location}</p>
                   </div>
                 </div>
               </div>
@@ -625,51 +584,44 @@ export default function Home() {
       </section>
 
       {/* Contact Form */}
-      <section id="contact" className="py-20 bg-[#1e40af]">
+      <section id="contact" className="py-16 sm:py-20 bg-[#1e40af]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="text-white">
               <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "var(--font-playfair)" }}>
                 Let&apos;s Find Your Perfect Home
               </h2>
-              <p className="text-[#93c5fd] mb-8">
+              <p className="text-[#dbeafe] mb-8">
                 Ready to start your real estate journey? Fill out the form and I&apos;ll personally reach out to discuss your needs and how I can help.
               </p>
 
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
+                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shrink-0">
+                    <Phone className="w-6 h-6" />
                   </div>
-                  <div>
-                    <p className="text-[#93c5fd] text-sm">Phone</p>
+                  <div className="min-w-0">
+                    <p className="text-[#dbeafe] text-sm">Phone</p>
                     <p className="font-semibold">(555) 123-4567</p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
+                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shrink-0">
+                    <Mail className="w-6 h-6" />
                   </div>
-                  <div>
-                    <p className="text-[#93c5fd] text-sm">Email</p>
-                    <p className="font-semibold">sarah@sarahmitchellrealty.com</p>
+                  <div className="min-w-0">
+                    <p className="text-[#dbeafe] text-sm">Email</p>
+                    <p className="font-semibold break-all">sarah@sarahmitchellrealty.com</p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
+                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shrink-0">
+                    <MapPin className="w-6 h-6" />
                   </div>
-                  <div>
-                    <p className="text-[#93c5fd] text-sm">Office</p>
+                  <div className="min-w-0">
+                    <p className="text-[#dbeafe] text-sm">Office</p>
                     <p className="font-semibold">123 Luxury Lane, Suite 100, Beverly Hills, CA 90210</p>
                   </div>
                 </div>
@@ -677,33 +629,25 @@ export default function Home() {
 
               <div className="flex gap-4 mt-8">
                 <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="Facebook">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                  </svg>
+                  <Facebook className="w-5 h-5" />
                 </a>
                 <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="Instagram">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-                  </svg>
+                  <Instagram className="w-5 h-5" />
                 </a>
                 <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="LinkedIn">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                  </svg>
+                  <Linkedin className="w-5 h-5" />
                 </a>
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-xl">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-xl">
               {submitSuccess ? (
                 <div className="text-center py-12">
                   <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Check className="w-8 h-8 text-green-600" />
                   </div>
                   <h3 className="text-2xl font-bold text-[#1a1a2e] mb-2">Thank You!</h3>
-                  <p className="text-[#64748b]">I&apos;ll be in touch with you shortly.</p>
+                  <p className="text-[#475569]">I&apos;ll be in touch with you shortly.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -759,7 +703,7 @@ export default function Home() {
                     <label className="block text-sm font-medium text-[#1a1a2e] mb-2">
                       I&apos;m interested in *
                     </label>
-                    <div className="flex gap-4">
+                    <div className="flex flex-wrap gap-4">
                       <label className="flex items-center gap-2 cursor-pointer">
                         <input
                           type="radio"
@@ -838,10 +782,7 @@ export default function Home() {
                   >
                     {isSubmitting ? (
                       <>
-                        <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                        </svg>
+                        <Loader2 className="animate-spin w-5 h-5" />
                         Sending...
                       </>
                     ) : (
@@ -858,8 +799,8 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-[#1a1a2e] text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div className="md:col-span-2">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+            <div className="sm:col-span-2">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-10 h-10 bg-[#1e40af] rounded-full flex items-center justify-center">
                   <span className="text-white font-bold text-lg" style={{ fontFamily: "var(--font-playfair)" }}>SM</span>
@@ -868,17 +809,17 @@ export default function Home() {
                   Sarah Mitchell
                 </span>
               </div>
-              <p className="text-[#94a3b8] mb-4 max-w-md">
+              <p className="text-[#cbd5e1] mb-4 max-w-md">
                 Your trusted partner in luxury real estate. Helping clients find their dream homes in Beverly Hills and surrounding areas for over 15 years.
               </p>
-              <p className="text-[#94a3b8] text-sm">
+              <p className="text-[#cbd5e1] text-sm">
                 CA DRE License #01234567
               </p>
             </div>
 
             <div>
               <h4 className="font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-[#94a3b8]">
+              <ul className="space-y-2 text-[#cbd5e1]">
                 <li><a href="#listings" className="hover:text-white transition-colors">Listings</a></li>
                 <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
                 <li><a href="#about" className="hover:text-white transition-colors">About</a></li>
@@ -889,9 +830,9 @@ export default function Home() {
 
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
-              <ul className="space-y-2 text-[#94a3b8]">
+              <ul className="space-y-2 text-[#cbd5e1]">
                 <li>(555) 123-4567</li>
-                <li>sarah@sarahmitchellrealty.com</li>
+                <li className="break-all">sarah@sarahmitchellrealty.com</li>
                 <li>123 Luxury Lane, Suite 100</li>
                 <li>Beverly Hills, CA 90210</li>
               </ul>
@@ -899,10 +840,10 @@ export default function Home() {
           </div>
 
           <div className="border-t border-[#334155] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-[#94a3b8] text-sm">
+            <p className="text-[#cbd5e1] text-sm">
               &copy; {new Date().getFullYear()} Sarah Mitchell Real Estate. All rights reserved.
             </p>
-            <div className="flex gap-6 text-[#94a3b8] text-sm">
+            <div className="flex gap-6 text-[#cbd5e1] text-sm">
               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
             </div>
