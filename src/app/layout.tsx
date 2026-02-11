@@ -16,12 +16,12 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Sarah Mitchell | Luxury Real Estate Agent",
-  description: "Beverly Hills luxury real estate agent with 15+ years of experience. Specializing in residential properties, first-time buyers, and investment consulting.",
+  description: "Beverly Hills luxury real estate agent with 15+ years experience. Specializing in residential properties, first-time buyers, and investments.",
   keywords: "real estate agent, luxury homes, property sales, home buying, real estate services, residential real estate",
   authors: [{ name: "Sarah Mitchell" }],
   openGraph: {
     title: "Sarah Mitchell | Luxury Real Estate Agent",
-    description: "Beverly Hills luxury real estate agent with 15+ years of experience. Specializing in residential properties, first-time buyers, and investment consulting.",
+    description: "Beverly Hills luxury real estate agent with 15+ years experience. Specializing in residential properties, first-time buyers, and investments.",
     images: ["/og-image.png"],
     url: "https://realtor-landing-six.vercel.app",
     type: "website",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Sarah Mitchell | Luxury Real Estate Agent",
-    description: "Beverly Hills luxury real estate agent with 15+ years of experience. Specializing in residential properties, first-time buyers, and investment consulting.",
+    description: "Beverly Hills luxury real estate agent with 15+ years experience. Specializing in residential properties, first-time buyers, and investments.",
   },
   alternates: {
     canonical: "https://realtor-landing-six.vercel.app",
@@ -49,7 +49,7 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
+    "@type": "LocalBusiness",
     name: "Sarah Mitchell",
     description: "Luxury real estate agent specializing in residential properties, first-time buyers, and investment properties.",
     url: "https://realtor-landing-six.vercel.app",
